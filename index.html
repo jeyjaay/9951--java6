@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola</title>
+    <script>
+        function validaCampo() {
+            var campos = document.forms["formulario"].getElementsByTagName("input");
+            for (var i = 0; i < campos.length; i++) {
+                if (campos[i].value.trim() === "") {
+                    alert("Por favor, preencha todos os campos.");
+                    campos[i].focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="formulario" onsubmit="return validaCampo()">
+        <input type="text" name="campo1" placeholder="Campo 1">
+        <input type="text" name="campo2" placeholder="Campo 2">
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>
